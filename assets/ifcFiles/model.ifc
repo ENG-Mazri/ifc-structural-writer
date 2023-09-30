@@ -1,0 +1,41 @@
+ISO-10303-21;
+HEADER;
+/******************************************************
+* STEP Physical File produced by: IFCjs WebIfc 0.0.39
+* Module: web-ifc/IfcLoader
+* Version: 0.0.39
+* Source: https://github.com/IFCjs/web-ifc
+* Issues: https://github.com/IFCjs/web-ifc/issues
+******************************************************/
+FILE_DESCRIPTION(('demo ifc model'),'2;1');
+FILE_NAME('Model','2023-09-29T17:25:39',('Mazri A.'),(),'ifcjs/web-ifc-api','ifcjs/web-ifc-api',$);
+FILE_SCHEMA(('IFC4'));
+ENDSEC;
+DATA;
+#0=IFCORGANIZATION($,'Mazri',$,$,$);
+#1=IFCAPPLICATION(#0,'0.0.1','my application','app');
+#2=IFCSIUNIT(#0,.LENGTHUNIT.,.MILLI.,.METRE.);
+#3=IFCUNITASSIGNMENT((#2));
+#4=IFCCARTESIANPOINT((0.,0.,1.));
+#5=IFCDIRECTION((0.,0.,1.));
+#6=IFCAXIS2PLACEMENT3D(#4,$,$);
+#7=IFCGEOMETRICREPRESENTATIONCONTEXT('3D','Model',3.,$,#6,#5);
+#8=IFCPROJECT('3PD3rIYvHFuptfXV_GTkB.',$,'project','project desc',$,$,$,(#7),#3);
+#9=IFCRECTANGLEPROFILEDEF(.AREA.,'rectangular profile',$,300.,400.);
+#10=IFCEXTRUDEDAREASOLID(#9,#6,#5,4000.);
+#11=IFCSHAPEREPRESENTATION(#7,'Body','sweptSolid',(#10));
+#12=IFCPRODUCTDEFINITIONSHAPE($,$,(#11));
+#13=IFCCOLUMN('OOdnfAqBH4mPLxfsvLRvwV',$,'m_column','column desc',$,$,#12,'a234234',.NOTDEFINED.);
+#14=IFCCOLOURRGB($,0.5,0.5,0.5);
+#15=IFCSURFACESTYLERENDERING(#14,0.,0.8,$,$,$,$,$,.NOTDEFINED.);
+#16=IFCSURFACESTYLE('my surface style',.BOTH.,(#15));
+#17=IFCSTYLEDITEM(#10,(#16),$);
+#18=IFCSITE('hi9two7BGO5FVx07R7cblF',$,'my site','',$,$,$,$,$,$,$,$,$,$);
+#19=IFCRELAGGREGATES('.0RPXWOJHHux9RHQ3MpICk',$,$,$,#8,(#18));
+#20=IFCBUILDING('_5QAVRHEIyyiJT8RPoVLuF',$,'building','',$,$,$,$,$,$,$,$);
+#21=IFCRELAGGREGATES('3GGvxV.lGoDSNsHZlHpEW.',$,$,$,#18,(#20));
+#22=IFCBUILDINGSTOREY('IJTkZ5XDIOySQTBjaoVK4.',$,'Level 0','Datum',$,$,$,$,$,0.);
+#23=IFCRELAGGREGATES('EEihrNM8IIP1enWeQSEZlF',$,$,$,#20,(#22));
+#24=IFCRELCONTAINEDINSPATIALSTRUCTURE('HULGETmRIaqWMgwygTSTxk',$,$,$,(#13),#22);
+ENDSEC;
+END-ISO-10303-21;

@@ -1,0 +1,47 @@
+ISO-10303-21;
+HEADER;
+/******************************************************
+* STEP Physical File produced by: IFCjs WebIfc 0.0.39
+* Module: web-ifc/IfcLoader
+* Version: 0.0.39
+* Source: https://github.com/IFCjs/web-ifc
+* Issues: https://github.com/IFCjs/web-ifc/issues
+******************************************************/
+FILE_DESCRIPTION(('Demo IFC Structural Model'),'2;1');
+FILE_NAME('Structural Model','2023-09-30T19:48:18',('Mazri A.'),(),'ifcjs/web-ifc-api','ifcjs/web-ifc-api',$);
+FILE_SCHEMA(('IFC4'));
+ENDSEC;
+DATA;
+#0=IFCORGANIZATION($,'Mazri',$,$,$);
+#1=IFCAPPLICATION(#0,'0.0.1','my application','app');
+#2=IFCSIUNIT(#0,.LENGTHUNIT.,.MILLI.,.METRE.);
+#3=IFCUNITASSIGNMENT((#2));
+#4=IFCCARTESIANPOINT((0.,0.,1.));
+#5=IFCDIRECTION((0.,0.,1.));
+#6=IFCAXIS2PLACEMENT3D(#4,$,$);
+#7=IFCGEOMETRICREPRESENTATIONCONTEXT('3D','Model',3.,$,#6,#5);
+#8=IFCPROJECT('lHIeW1tCInHH7f4a9glxN.',$,'project','project desc',$,$,$,(#7),#3);
+#9=IFCSITE('VxgTfJtyIEHFLAQGi3Qbzk',$,'my site','',$,$,$,$,$,$,$,$,$,$);
+#10=IFCRELAGGREGATES('myvzp7kUFPaIdcIGKTTLkV',$,$,$,#8,(#9));
+#11=IFCBUILDING('KDXy9YUgFsPDaTmjF18pnV',$,'building','',$,$,$,$,$,$,$,$);
+#12=IFCRELAGGREGATES('9Nq3.6u4HDqEo4mZm5eJ6k',$,$,$,#9,(#11));
+#13=IFCBUILDINGSTOREY('WQy6l.ZIH55WhVUmDo.OR.',$,'Level 0','Datum',$,$,$,$,$,0.);
+#14=IFCRELAGGREGATES('4Bzql0LxHKqhgEinFPik8.',$,$,$,#11,(#13));
+#15=IFCSTRUCTURALANALYSISMODEL('V72MC3gAFLXqTXxGVfLiKk',$,'Structural Analysis #1','',$,.NOTDEFINED.,$,$,$,$);
+#16=IFCRELDECLARES('2Y2XnOJJGX9NI8iUsuIU2V',$,'GROUP','',#8,(#15));
+#17=IFCCARTESIANPOINT((0.,0.,0.));
+#18=IFCVERTEXPOINT(#17);
+#19=IFCTOPOLOGYREPRESENTATION(#7,'Reference','Vertex',(#18));
+#20=IFCPRODUCTDEFINITIONSHAPE($,$,(#19));
+#21=IFCBOUNDARYNODECONDITION('Fixed',$,$,$,$,$,$);
+#22=IFCSTRUCTURALPOINTCONNECTION('5GQXJ4m5IJmUgu6bSQMBUV',$,'Point Connection #1','',$,$,#20,#21,$);
+#23=IFCRELASSIGNSTOGROUP('DK.ast4.H.miGoz3FB1ifF',$,'','',(#22,#28),.GROUP.,#15);
+#24=IFCMATERIAL('ASTM A36','','Steel');
+#25=IFCISHAPEPROFILEDEF(.AREA.,'W10X30',$,5.81,10.5,0.3,0.51,0.125,$,$);
+#26=IFCSTRUCTURALCURVEMEMBER('vdAQJOtdFyHCBFR4PTWUe.',$,'Curve Member #1','',$,$,#25,.RIGID_JOINED_MEMBER.,#5);
+#27=IFCMATERIALPROFILESET($,$,(#26),$);
+#28=IFCMATERIALPROFILESETUSAGE(#27,$,$);
+#29=IFCRELASSOCIATESMATERIAL('oLqIWIx1HjqSfMDTM.EyxF',$,$,$,(#26),#28);
+#30=IFCRELCONTAINEDINSPATIALSTRUCTURE('OwIjmHnlI_y2tXy1G5gpCF',$,$,$,(#26),#13);
+ENDSEC;
+END-ISO-10303-21;
